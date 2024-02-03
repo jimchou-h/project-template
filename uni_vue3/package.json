@@ -1,0 +1,52 @@
+{
+  "name": "uni_vue3",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "eslint-scope": "^7.2.2",
+    "eslint-visitor-keys": "^3.4.2",
+    "prettier-linter-helpers": "^1.0.0",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.vue pages",
+    "lint-fix": "eslint --fix --ext .js,.vue .",
+    "prepare": "husky install",
+    "lint-staged": "npx --no-install lint-staged",
+    "commit":"git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ext .js,.vue .",
+      "prettier --write"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.16.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.0",
+    "sass": "^1.64.2",
+    "sass-loader": "^13.3.2",
+    "vite-plugin-vue-setup-extend": "^0.4.0"
+  }
+}

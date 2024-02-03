@@ -1,0 +1,5 @@
+node_modules/
+uni_modules/
+
+dist/
+index.html
