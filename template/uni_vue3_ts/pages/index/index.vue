@@ -4,7 +4,7 @@
     <view class="text-area">
       <text class="title">{{ titleRef }}</text>
     </view>
-    <u-button>月落</u-button>
+    <u-button>{{ defaultForm.name }}</u-button>
   </view>
 </template>
 
@@ -16,8 +16,8 @@ export default {
 
 <script setup lang="ts">
 import { ref, Ref } from 'vue'
-import { DefaultForm } from '@/types/common.ts'
-const titleRef = ref('12345')
+import { DefaultForm } from '@/types/common'
+const titleRef: Ref<string> = ref('12345')
 const defaultForm: DefaultForm = {
   name: '张三',
   age: 14,

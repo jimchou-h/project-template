@@ -32,7 +32,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <Watermask />
   <CustomList
     ref="custom-list"
     :list="list"
