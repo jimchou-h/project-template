@@ -2,18 +2,16 @@
   "name": "uni_vue3",
   "version": "1.0.0",
   "main": "main.js",
-  "dependencies": {
-    "eslint-scope": "^7.2.2",
-    "eslint-visitor-keys": "^3.4.2",
-    "prettier-linter-helpers": "^1.0.0",
-    "vue-eslint-parser": "^9.3.1"
-  },
   "scripts": {
-    "lint": "eslint --ext .js,.vue pages",
-    "lint-fix": "eslint --fix --ext .js,.vue .",
-    "prepare": "husky install",
-    "lint-staged": "npx --no-install lint-staged",
-    "commit":"git-cz"
+    "eslint:comment": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .js 和 .vue 的文件",
+    "eslint": "eslint pages --fix --ext .js,.vue,.tsx",
+    "prettier:comment": "自动格式化当前目录下的所有文件",
+    "prettier": "prettier --write .",
+    "commit:comment": "引导设置规范化的提交信息",
+    "commit": "git-cz",
+    "husky-install:comment": "使用时需要先初始化",
+    "husky-install": "npx husky init",
+    "prepare": "husky"
   },
   "config": {
     "commitizen": {
@@ -29,6 +27,12 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "eslint-scope": "^7.2.2",
+    "eslint-visitor-keys": "^3.4.2",
+    "prettier-linter-helpers": "^1.0.0",
+    "vue-eslint-parser": "^9.3.1"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.9",
     "@babel/preset-env": "^7.22.9",

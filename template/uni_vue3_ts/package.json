@@ -1,21 +1,48 @@
 {
-  "name": "uni_vue3",
+  "name": "uni_vue3_ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js,.vue pages",
-    "lint-fix": "eslint --fix --ext .js,.vue pages"
+    "eslint:comment": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .ts, .js 和 .vue 的文件",
+    "eslint": "eslint pages --fix --ext .js,.vue,.ts,.tsx",
+    "prettier:comment": "自动格式化当前目录下的所有文件",
+    "prettier": "prettier --write .",
+    "commit:comment": "引导设置规范化的提交信息",
+    "commit": "git-cz",
+    "husky-install:comment": "使用时需要先初始化",
+    "husky-install": "npx husky init",
+    "prepare": "husky"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "npm run eslint",
+      "prettier --parser=typescript --write"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@dcloudio/types": "^3.4.8",
     "@types/uni-app": "^1.4.4",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.57.1",
     "@vue/eslint-config-prettier": "^7.1.0",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.36.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-plugin-import": "^2.25.2",
@@ -23,6 +50,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.10.0",
     "prettier": "^2.8.7",
-    "typescript": "*"
+    "typescript": "^4.5.4"
   }
 }

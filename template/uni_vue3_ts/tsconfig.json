@@ -17,7 +17,12 @@
     "paths": {
       "@/*": ["/*"]
     },
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": ["@dcloudio/types"]
   },
-  "include": ["types/*.ts", "pages/**/*.vue"]
+  "include": ["types/*.ts", "pages/**/*.tsx", "pages/**/*.vue"],
+  "exclude": [
+    "node_modules",
+    "unpackage",
+  ]
 }
